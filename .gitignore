@@ -1,0 +1,23 @@
+# Node modules (if ever used)
+node_modules/
+
+# Firebase debug files
+firebase-debug.log
+
+# Environment/config secrets
+.env
+.env.local
+
+# OS-specific files
+.DS_Store
+Thumbs.db
+
+# VS Code workspace settings
+.vscode/
+
+# Build output (if any)
+dist/
+build/
+
+# Log files
+*.log
