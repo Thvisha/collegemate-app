@@ -1,0 +1,44 @@
+body {
+  font-family: 'Poppins', sans-serif;
+  background: #fff9fb;
+  padding: 2rem;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: 100px repeat(9, 1fr);
+  grid-auto-rows: 60px;
+  gap: 1px;
+  background-color: #ccc;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.header, .time, .day, .cell {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: white;
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.time {
+  background-color: #f0f0f0;
+}
+
+.day {
+  background-color: #ffeaea;
+  font-weight: 600;
+}
+
+.cell {
+  background-color: #fafafa;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.cell:hover {
+  background-color: #f3f3f3;
+}
