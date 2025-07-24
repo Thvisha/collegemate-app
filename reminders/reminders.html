@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Reminders - CollegeMate</title>
+  <link rel="stylesheet" href="reminders.css" />
+</head>
+<body>
+  <h1>⏰ My Reminders</h1>
+
+  <form id="reminderForm">
+    <input type="text" id="title" placeholder="Reminder Title" required />
+    <textarea id="description" placeholder="Description" required></textarea>
+    <input type="date" id="date" required />
+    <input type="time" id="time" required />
+    <button type="submit">Add Reminder</button>
+  </form>
+
+  <h2>📅 Upcoming Reminders</h2>
+  <div id="reminderList"></div>
+
+  <script src="reminders.js"></script>
+</body>
+</html>
