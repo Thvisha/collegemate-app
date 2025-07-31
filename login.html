@@ -20,12 +20,43 @@
     <p class="switch-text">Don’t have an account? <a href="signup.html">Sign up</a></p>
   </div>
 
-  <script>
+  <!-- Firebase Script -->
+  <script type="module">
+    // Firebase imports
+    import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-app.js";
+    import { getAuth, signInWithEmailAndPassword } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-auth.js";
+
+    // Your Firebase config
+    const firebaseConfig = {
+      apiKey: "AIzaSyBscq2oOAJast1L-azYVFyAo4cE6Il07DA",
+      authDomain: "collegemate-331fe.firebaseapp.com",
+      projectId: "collegemate-331fe",
+      storageBucket: "collegemate-331fe.appspot.com",
+      messagingSenderId: "743240860364",
+      appId: "1:743240860364:web:YOUR_APP_ID" // Optional, can be added if needed
+    };
+
+    // Initialize Firebase
+    const app = initializeApp(firebaseConfig);
+    const auth = getAuth(app);
+
+    // Login functionality
     const form = document.querySelector('.auth-form');
-    form.addEventListener('submit', function (e) {
+    form.addEventListener('submit', async function (e) {
       e.preventDefault();
-      window.location.href = 'dashboard.html'; // redirect after fake login
+      const email = form[0].value;
+      const password = form[1].value;
+
+      try {
+        await signInWithEmailAndPassword(auth, email, password);
+        alert("✅ Login successful!");
+        window.location.href = 'dashboard.html';
+      } catch (error) {
+        alert("❌ Login failed: " + error.message);
+      }
     });
   </script>
+  <script type="module" src="firebase.js"></script>
+  <script type="module" src="login.js"></script>
 </body>
 </html>
